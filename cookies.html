@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - AutoParts Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #e74c3c;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #555;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-table th {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cookie-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .cookie-table tr:hover {
+            background: #e9ecef;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #e74c3c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .cookie-settings {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cookie-settings h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .settings-button {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .settings-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">AutoParts Pro</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            
+            <div class="page-header">
+                <h1>Cookie Policy</h1>
+                <p>Learn about how AutoParts Pro uses cookies and similar technologies to enhance your browsing experience.</p>
+                <p><strong>Last Updated:</strong> May 23, 2025</p>
+            </div>
+
+            <div class="content-section">
+                <h2>What Are Cookies?</h2>
+                <p>Cookies are small text files that are stored on your computer or mobile device when you visit a website. They help websites remember information about your visit, such as your preferred language and other settings. This can make your next visit easier and the site more useful to you.</p>
+                
+                <p>AutoParts Pro uses cookies and similar technologies (such as web beacons, pixels, and local storage) to provide, secure, and improve our services. This policy explains how and why we use these technologies and the choices you have.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Quick Summary</h3>
+                <p>We use cookies to improve your experience on our website, remember your preferences, analyze site traffic, and provide personalized content. You can control cookie settings through your browser or our cookie preference center.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Types of Cookies We Use</h2>
+                
+                <h3>Essential Cookies</h3>
+                <p>These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility. Without these cookies, services you have asked for cannot be provided.</p>
+                
+                <h3>Performance Cookies</h3>
+                <p>These cookies collect information about how visitors use our website, such as which pages are visited most often and if users get error messages from web pages. These cookies don't collect information that identifies individual visitors.</p>
+                
+                <h3>Functional Cookies</h3>
+                <p>These cookies allow our website to remember choices you make (such as your username, language, or region) and provide enhanced, more personalized features.</p>
+                
+                <h3>Advertising Cookies</h3>
+                <p>These cookies are used to deliver advertisements more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Specific Cookies We Use</h2>
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Type</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>session_id</td>
+                            <td>Essential</td>
+                            <td>Maintains your session while browsing the site</td>
+                            <td>Session</td>
+                        </tr>
+                        <tr>
+                            <td>shopping_cart</td>
+                            <td>Essential</td>
+                            <td>Remembers items in your shopping cart</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>user_preferences</td>
+                            <td>Functional</td>
+                            <td>Stores your site preferences and settings</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>vehicle_info</td>
+                            <td>Functional</td>
+                            <td>Remembers your vehicle information for part compatibility</td>
+                            <td>6 months</td>
+                        </tr>
+                        <tr>
+                            <td>analytics_tracking</td>
+                            <td>Performance</td>
+                            <td>Helps us understand how visitors interact with our website</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td>marketing_consent</td>
+                            <td>Advertising</td>
+                            <td>Tracks consent for marketing communications</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>ad_personalization</td>
+                            <td>Advertising</td>
+                            <td>Enables personalized advertising based on interests</td>
+                            <td>90 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h2>Third-Party Cookies</h2>
+                <p>We may also use third-party services that place cookies on your device. These include:</p>
+                
+                <h3>Google Analytics</h3>
+                <p>We use Google Analytics to understand how visitors use our website. Google Analytics uses cookies to collect information such as how often users visit our site, what pages they visit, and what other sites they used prior to coming to our site.</p>
+                
+                <h3>Payment Processors</h3>
+                <p>When you make a purchase, our payment processors may use cookies to ensure secure transactions and prevent fraud.</p>
+                
+                <h3>Social Media Platforms</h3>
+                <p>We may use social media plugins that allow you to share content. These platforms may set cookies when you interact with their features.</p>
+                
+                <h3>Advertising Networks</h3>
+                <p>We work with advertising partners to display relevant ads. These partners may use cookies to show you personalized advertisements based on your interests.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Your Cookie Choices</h2>
+                <p>You have several options for managing cookies:</p>
+                
+                <h3>Browser Settings</h3>
+                <p>Most web browsers allow you to control cookies through their settings preferences. You can set your browser to:</p>
+                <ul>
+                    <li>Notify you when cookies are being set</li>
+                    <li>Block all cookies</li>
+                    <li>Block third-party cookies only</li>
+                    <li>Delete cookies when you close your browser</li>
+                    <li>Clear all cookies from your browser</li>
+                </ul>
+                
+                <h3>Opt-Out Tools</h3>
+                <p>You can opt out of interest-based advertising through industry opt-out tools:</p>
+                <ul>
+                    <li>Digital Advertising Alliance (DAA): <em>optout.aboutads.info</em></li>
+                    <li>Network Advertising Initiative (NAI): <em>optout.networkadvertising.org</em></li>
+                    <li>European Digital Advertising Alliance: <em>youronlinechoices.eu</em></li>
+                </ul>
+            </div>
+
+            <div class="cookie-settings">
+                <h3>Manage Your Cookie Preferences</h3>
+                <p>You can customize your cookie preferences at any time using the buttons below:</p>
+                <button class="settings-button" onclick="alert('Cookie preferences would open in a real implementation')">Cookie Settings</button>
+                <button class="settings-button" onclick="alert('All cookies would be accepted')">Accept All</button>
+                <button class="settings-button" onclick="alert('Only essential cookies would be kept')">Essential Only</button>
+            </div>
+
+            <div class="content-section">
+                <h2>Mobile App Tracking</h2>
+                <p>If you use our mobile application, we may use similar technologies such as:</p>
+                <ul>
+                    <li><strong>Device Identifiers:</strong> Unique identifiers associated with your mobile device</li>
+                    <li><strong>App Analytics:</strong> Information about how you use our mobile app</li>
+                    <li><strong>Push Notifications:</strong> Alerts sent to your device (with your permission)</li>
+                    <li><strong>Location Data:</strong> GPS or network-based location (with your permission)</li>
+                </ul>
+                <p>You can control these settings through your device's privacy settings or within our mobile app.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Impact of Disabling Cookies</h2>
+                <p>While you can browse our website with cookies disabled, please note that disabling certain cookies may affect your experience:</p>
+                <ul>
+                    <li>You may need to re-enter information repeatedly</li>
+                    <li>Some features may not work properly</li>
+                    <li>Your shopping cart may not remember items</li>
+                    <li>Personalized recommendations may not be available</li>
+                    <li>We won't be able to remember your preferences</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Updates to This Policy</h2>
+                <p>We may update this Cookie Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we do, we will revise the "Last Updated" date at the top of this policy.</p>
+                
+                <p>We encourage you to review this policy periodically to stay informed about our use of cookies and related technologies.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Contact Us About Cookies</h3>
+                <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us at <strong>cookies@autopartspro.com</strong> or call us at <strong>1-800-AUTO-PARTS</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AutoParts Pro. All rights reserved. | <a href="privacy.html" style="color: #e74c3c;">Privacy Policy</a> | <a href="terms.html" style="color: #e74c3c;">Terms of Service</a> | <a href="cookies.html" style="color: #e74c3c;">Cookie Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
