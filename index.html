@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts Pro - Quality Auto Parts & Accessories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #e74c3c;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><rect fill="%23444" x="100" y="200" width="200" height="100" rx="10"/><rect fill="%23555" x="400" y="150" width="150" height="80" rx="8"/><rect fill="%23666" x="700" y="180" width="180" height="120" rx="12"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            padding: 3rem 2rem;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-item h4 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">AutoParts Pro</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Auto Parts</h1>
+            <p>Your trusted partner for high-quality automotive parts and accessories. We deliver excellence with every component, ensuring your vehicle performs at its best.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+            <section class="section" id="products">
+                <h2>Our Product Range</h2>
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666;">Discover our comprehensive selection of automotive parts designed to meet all your vehicle maintenance and performance needs.</p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <h3>Engine Components</h3>
+                        <p>Premium engine parts including pistons, cylinders, gaskets, and timing belts. Our engine components are manufactured to OEM specifications, ensuring perfect fit and optimal performance for your vehicle.</p>
+                        <ul class="features-list">
+                            <li>OEM quality standards</li>
+                            <li>Extended warranty coverage</li>
+                            <li>Professional installation support</li>
+                            <li>Compatible with major brands</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-card">
+                        <h3>Brake Systems</h3>
+                        <p>Complete brake solutions featuring brake pads, rotors, calipers, and brake fluid. Safety is our priority, and our brake components undergo rigorous testing to ensure maximum stopping power and reliability.</p>
+                        <ul class="features-list">
+                            <li>Enhanced stopping performance</li>
+                            <li>Reduced brake fade</li>
+                            <li>Noise-free operation</li>
+                            <li>Long-lasting durability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-card">
+                        <h3>Suspension & Steering</h3>
+                        <p>Comprehensive suspension and steering components including shocks, struts, ball joints, and tie rod ends. Improve your vehicle's handling, comfort, and safety with our precision-engineered parts.</p>
+                        <ul class="features-list">
+                            <li>Improved ride comfort</li>
+                            <li>Enhanced vehicle stability</li>
+                            <li>Precision steering response</li>
+                            <li>Weather-resistant construction</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-card">
+                        <h3>Electrical Systems</h3>
+                        <p>Modern vehicles rely heavily on electrical components. Our range includes alternators, starters, batteries, and wiring harnesses, all designed to provide reliable power and connectivity for your vehicle's electrical needs.</p>
+                        <ul class="features-list">
+                            <li>High electrical efficiency</li>
+                            <li>Corrosion-resistant materials</li>
+                            <li>Easy installation process</li>
+                            <li>Comprehensive testing protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="services">
+                <h2>Our Services</h2>
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666;">Beyond supplying quality parts, we provide comprehensive automotive services to keep your vehicle running smoothly and efficiently.</p>
+                
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">🔧</div>
+                        <h3>Expert Installation</h3>
+                        <p>Professional installation services by certified technicians with years of experience in automotive repair and maintenance.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">📞</div>
+                        <h3>Technical Support</h3>
+                        <p>24/7 technical support to help you identify the right parts and provide guidance on installation and maintenance procedures.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">🚚</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Same-day shipping for in-stock items with reliable delivery partners ensuring your parts arrive safely and on time.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Warranty Protection</h3>
+                        <p>Comprehensive warranty coverage on all parts with hassle-free replacement policy for defective components.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Why Choose AutoParts Pro?</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">With over 15 years in the automotive industry, we've built our reputation on quality, reliability, and exceptional customer service. Our extensive inventory includes parts for domestic and imported vehicles, from economy cars to luxury automobiles and commercial trucks.</p>
+                
+                <p style="text-align: center; font-size: 1.1rem; color: #666;">We partner with leading manufacturers and suppliers worldwide to ensure our customers receive only the highest quality components. Our team of automotive experts is dedicated to helping you find the exact parts you need, whether you're a professional mechanic, auto shop owner, or DIY enthusiast working on your own vehicle.</p>
+            </section>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>1-800-AUTO-PARTS<br>(1-800-288-6727)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>info@autopartspro.com<br>support@autopartspro.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Address</h4>
+                    <p>123 Automotive Boulevard<br>Detroit, MI 48201</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hours</h4>
+                    <p>Mon-Fri: 8AM-8PM<br>Sat-Sun: 9AM-6PM</p>
+                </div>
+            </div>
+            <p>&copy; 2025 AutoParts Pro. All rights reserved. | Quality Parts, Reliable Service, Unbeatable Prices</p>
+        </div>
+    </footer>
+</body>
+</html>
